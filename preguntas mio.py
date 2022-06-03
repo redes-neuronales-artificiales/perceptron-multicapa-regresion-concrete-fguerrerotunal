@@ -89,13 +89,13 @@ from sklearn.model_selection import GridSearchCV
 #   * Use parada temprana
 
 param_grid = {
-    "hidden_layer_sizes": (1,2,3,4,5,6,7,8),  
-    "activation": ["relu"],  
-    "learning_rate": ["adaptive"],
-    "momentum": [0.7,0.8,0.9],  
-    "learning_rate_init": [0.01,0.05,0.1],  
-    "max_iter": [5000],  
-    "early_stopping": [True],  
+    "mlpregressor__hidden_layer_sizes": (1,2,3,4,5,6,7,8),  
+    "mlpregressor__activation": ["relu"],  
+    "mlpregressor__learning_rate": ["adaptive"],
+    "mlpregressor__momentum": [0.7,0.8,0.9],  
+    "mlpregressor__learning_rate_init": [0.01,0.05,0.1],  
+    "mlpregressor__max_iter": [5000],  
+    "mlpregressor__early_stopping": [True],  
 }
 
 estimator = pipeline
@@ -108,7 +108,7 @@ gridsearchcv = GridSearchCV(
     estimator = estimator,
     param_grid = param_grid,
     cv = 5,
-    scoring = "accuracy" 
+    scoring = "r2"#"accuracy" 
 )
 
 
