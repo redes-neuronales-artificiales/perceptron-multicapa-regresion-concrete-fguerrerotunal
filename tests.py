@@ -5,8 +5,6 @@ Calificación del laboratorio
 
 import sys
 
-import soluciones
-
 import preguntas
 
 
@@ -67,7 +65,7 @@ def test_04():
 
     assert gridsearchcv.__class__.__name__ == "GridSearchCV"
     assert gridsearchcv.cv == 5
-    assert gridsearchcv.scoring == "accuracy"
+    assert gridsearchcv.scoring == "r2"
     assert gridsearchcv.return_train_score is False
 
 
